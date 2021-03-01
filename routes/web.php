@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,15 @@ Route::get('/otmetki', function () {
 Route::get('/sohranenki', function () {
     return view('sohranenki');
 })->name('sohranenki');
+
+Route::get('post/add', function () {
+    DB::table('post')->insert([
+        'id' => '02',
+        'title' => 'second',
+        'body' => 'its second post'
+    ]);
+});
+Route::get('post', function() {
+    $post = post::find(2);
+    return $post->body;
+});
