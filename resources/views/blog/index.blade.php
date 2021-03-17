@@ -7,6 +7,6 @@
     <title>blog</title>
 </head>
 <body>
-    
+    {{ $post }}
 </body>
 </html>

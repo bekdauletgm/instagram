@@ -12,4 +12,14 @@ class BlogController extends Controller
         $post = post::all();
         return view('blog.index')->with(['post'=>$post]);
     }
+    public function store(Request $request){
+        post::create([
+            'id' => $request->id,
+            'title' => $request->title,
+            'body' => $request->body
+
+
+        ]);
+        return back();
+    }
 }
