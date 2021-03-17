@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\post;
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,7 +38,4 @@ Route::get('post/add', function () {
         'body' => 'its second post'
     ]);
 });
-Route::get('post', function() {
-    $post = post::find(2);
-    return $post->body;
-});
+Route::get('post', [BlogController::class, 'index']); 
