@@ -29,6 +29,6 @@ class BlogController extends Controller
             return response(['message'=>'post not found'], 404);
         
 
-        return view('blog.detail')->with(['client'=>$post]);    
+        return view('blog.detail')->with(['post'=>$post]);    
     }
 }
